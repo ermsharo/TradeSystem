@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import LogoImage from './../assets/imgs/analytics.png';
 const HeaderBox = styled.header`
  
  
@@ -16,8 +16,10 @@ const HeaderBox = styled.header`
 const Logo = styled.div`
 
 img{
-   width: 6vw;
-   height: 6vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+   width: 60px;
+   height: 60px;
 }
 `; 
 
@@ -30,7 +32,7 @@ export default function Header()
 
         <HeaderBox>
             <Logo>
-                <img src="https://it.rutgers.edu/software-portal/wp-content/uploads/sites/21/2018/11/cropped-logo-placeholder-generic.200x200.png" alt="Generic Logo White 512 - Root @clipartmax.com" />
+                <img src={LogoImage} alt="Generic Logo White 512 - Root @clipartmax.com" />
             </Logo>
         </HeaderBox>
 

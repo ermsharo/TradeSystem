@@ -8,6 +8,7 @@ const FooterBox = styled.footer`
  color:white; 
  padding: 40px;
  margin-top: 64px;
+ 
 
 
 `;
@@ -20,7 +21,8 @@ export default function Footer()
     return(
 
         <FooterBox> 
-            
+              <div>Trade system</div>
+              <span>2021</span>  
         </FooterBox>
 
     )
