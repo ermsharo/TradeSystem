@@ -1,19 +1,37 @@
 import logo from './logo.svg';
 import './App.css';
-import SheetsFileRequest from './components/fileGet'; 
-import Header from './components/Header';
-import Home from  './components/Home';
-import Footer from './components/Footer'; 
+
+
+import Home from  './pages/PaginaHome/Home';
+import PaginaExibicaoIndicadores from './pages/PaginaExibicaoIndicadores';
+import PaginaFonteExterna from './pages/PaginaFonteExterna';
+import PaginaFonteLocal from './pages/PaginaFonteLocal';
+
+
+
 
 function App() {
-  return (
-    <div className="App">
-   <Header/>
-   <Home/>
-   <Footer/>
+//Enuqnato não tivermos  a rota, vamos usar essa constante aqui 
 
-    </div>
-  );
+  //0 - home
+  //1 - Input de csv
+  //2 - Input de base externa
+  //3 - Exibição dos indicadores
+
+return(
+<>
+
+
+{/*  <Home/> 
+ <PaginaFonteLocal/> 
+ <PaginaFonteExterna/>  */}
+ <PaginaExibicaoIndicadores />
+
+   
+  
+
+  </>
+)
 }
 
 export default App;
