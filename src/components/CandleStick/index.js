@@ -56,7 +56,7 @@ series: [{
       width: '5px',
     },
     fill:{
-      color: 'red',
+           color: 'red',
     },
     style: {
       color: 'red',
@@ -89,7 +89,7 @@ series: [{
           id: 'candles',
           toolbar: {
             autoSelected: 'pan',
-            show: false
+            show: true
           },
           zoom: {
             enabled: false
@@ -101,6 +101,9 @@ series: [{
               upward: '#3C90EB',
               downward: '#DF7D46'
             }
+          },
+          line:{
+            color: 'red'
           }
         },
         xaxis: {
