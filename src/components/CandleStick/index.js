@@ -4,19 +4,84 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 
 
+
+const traceFormatedData = (trace) =>{
+
+
+    let x = trace.x; 
+    let y = trace.y; 
+
+    //[Timestamp, O, H, L, C]
+ 
+     let size = x.length; 
+ console.log("Date", x.length)
+
+    let traceFormatedData = [];
+ 
+    for(let i = 0 ; i < size ; i++){
+ 
+      traceFormatedData.push({x : new Date(x[i]) , y:y[i]});
+    }
+    
+ console.log(traceFormatedData);  
+/*  return(FormatCandleData);  */
+
+return traceFormatedData; 
+    
+   }; 
+
+
 export default class ApexChart extends React.Component {
   constructor(props) {
     super(props);
+    
 
     this.state = {
-    
+
     
 series: [{
-  data: [
-    [1538856000000, [6593.34, 6600, 6582.63, 6600]], 
-    [1538856900000, [6595.16, 6604.76, 6590.73, 6593.86]]
-  ]
-}],
+  name: 'candle',
+  type :'candlestick',
+  data: this.props.candleData,
+},
+{
+  name: this.props.traceSmall.name,
+  type: 'line',
+  data: traceFormatedData(this.props.traceSmall),
+  
+    stroke:{
+      color: 'red',
+      fillColor: 'red', 
+      strokeColor: 'red', 
+      width: '5px',
+    },
+    fill:{
+      color: 'red',
+    },
+    style: {
+      color: 'red',
+    }
+ 
+},
+
+{
+  name: this.props.traceLarge.name,
+  type: 'line',
+  data: traceFormatedData(this.props.traceLarge),
+    color: 'blue',
+    stroke:{
+      color: 'red',
+      fillColor: 'red', 
+      strokeColor: 'red', 
+      width: '5px',
+    },
+    fill:{
+      color: 'red',
+    }
+
+},
+
+],
       options: {
         chart: {
           type: 'candlestick',
@@ -45,10 +110,7 @@ series: [{
     
       seriesBar: [{
         name: 'volume',
-        data:  [
-          [1538856000000, [6593.34, 6600, 6582.63, 6600]], 
-          [1538856900000, [6595.16, 6604.76, 6590.73, 6593.86]]
-        ]
+         data: this.props.candleData
       }],
       optionsBar: {
         chart: {
@@ -61,8 +123,7 @@ series: [{
           selection: {
             enabled: true,
             xaxis: {
-              min: new Date('20 Jan 2017').getTime(),
-              max: new Date('10 Dec 2017').getTime()
+            
             },
             fill: {
               color: '#ccc',
@@ -116,15 +177,28 @@ series: [{
 
 
   render() {
+
+
+    let CandleFormatdata = {
+      data: this.props.candleData
+    }
+
+    
+  
+    console.log('Candle format data', CandleFormatdata)
+
+    console.log('Trace small formated', traceFormatedData(this.props.traceSmall))
+
     return (
       
 
 <div class="chart-box">
 <div id="chart-candlestick">
-<Chart options={this.state.options} series={this.state.series} type="candlestick" height={290} />
+<Chart options={this.state.options} series={this.state.series} type="candlestick" height={350} />
+<Chart options={this.state.options} series={this.state.series} type="candlestick" height={350} />
 </div>
 <div id="chart-bar">
-<Chart options={this.state.optionsBar} series={this.state.seriesBar} type="bar" height={160} />
+<Chart options={this.state.optionsBar} series={this.state.seriesBar} type="candlestick" height={160} />
 </div>
 </div>
       );
