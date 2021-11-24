@@ -25,12 +25,20 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import MobileDatePicker from '@mui/lab/MobileDatePicker';
 import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
 import Stack from '@mui/material/Stack';
+import MACD from './../../components/MACD/index';
 
 
 const PageGrid = styled.div`
 padding: 64px;
 margin-top: 32px;
 
+
+`
+
+
+const ChartGrid = styled.div`
+ display: grid; 
+ grid-template-columns: 1fr 1fr;
 
 `
 
@@ -193,8 +201,14 @@ const bull = (
 
 const PaginaExibicaoIndicadores = (props) => {
 
-  const [startDateValue, setSartDateValue] = React.useState(new Date());
-  const [endDateValue, setEndDateValue] = React.useState(new Date());
+
+  var EndDefault = new Date(); 
+  var x = 360; 
+  EndDefault.setDate(EndDefault.getDate() - x);
+
+  const [Indicator, setIndicator] = React.useState('macd');
+  const [startDateValue, setSartDateValue] = React.useState(EndDefault);
+  const [endDateValue, setEndDateValue] =   React.useState(new Date());
 
     const [value, setValue] = React.useState(0);
       
@@ -211,12 +225,20 @@ const PaginaExibicaoIndicadores = (props) => {
 
 
 
+
+    let FormatDate = () =>{
+      
+    }; 
+
+
+
+
    /* const [ response, loading, hasError ] = useFetch('https://trading-system-backend.herokuapp.com/macd/yahoo/MULT3.SA?start=2020-11-17&end=2021-11-17&small_avg=9&larg_avg=16'); 
  */
 
-    const url = "http://127.0.0.1:8000/macd/yahoo/MULT3.SA?start=2020-11-17&end=2021-11-17&small_avg=9&larg_avg=16";
+    const url = `http://127.0.0.1:8000/${Indicator}/yahoo/MULT3.SA?start=${startDateValue.toISOString().split('T')[0]}&end=${endDateValue.toISOString().split('T')[0]}&small_avg=9&larg_avg=16`;
  
-   const [post, setPost] = React.useState(null);
+
 
 
    React.useEffect(() => {
@@ -225,8 +247,9 @@ const PaginaExibicaoIndicadores = (props) => {
       setResponse(response.data);
       console.log(response.data);
       setLoading(false);
+      console.log(startDateValue.toISOString().split('T')[0]); 
      });
-   }, []);
+   }, [startDateValue, endDateValue]);
  
    if (!response) return null;
 
@@ -307,7 +330,6 @@ return(FormatCandleData);
     <DesktopDatePicker
           label="Data do inicio"
           value={startDateValue}
-          minDate={new Date('2017-01-01')}
           onChange={(newValue) => {
             setSartDateValue(newValue);
           }}
@@ -317,7 +339,6 @@ return(FormatCandleData);
 <DesktopDatePicker
           label="Data do fim"
           value={endDateValue}
-          minDate={new Date('2017-01-01')}
           onChange={(newValue) => {
             setEndDateValue(newValue)
           }}
@@ -389,20 +410,25 @@ return(FormatCandleData);
 <Card variant="outlined">{cardInside("winning_trades_rate", response.avaliation.winning_trades_rate.toFixed(2)+"%", "descrição")}</Card>
 </Box>
 </IndicatorsBox>
-
+{/* <ChartGrid> */}
       <CandleStick  traceSmall = {response.trace_small} 
       traceLarge = {response.trace_large} 
        traceMACD = {response.trace_macd} 
        candleData = {CandleFormatData(response.candle_data)}/>
+     {/*     <MACD  traceSmall = {response.trace_small} 
+      traceLarge = {response.trace_large} 
+       traceMACD = {response.trace_macd} 
+       candleData = {CandleFormatData(response.candle_data)}/>
+       </ChartGrid> */}
       </TabPanel>
       <TabPanel value={value} index={1}>
-      <CandleStick/>
+      
       </TabPanel>
       <TabPanel value={value} index={2}>
-      <CandleStick/>
+  
       </TabPanel>
       <TabPanel value={value} index={3}>
-      <CandleStick/>
+
       </TabPanel>
 </div>
 
