@@ -1,25 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
+import { Routes, Route, Link } from "react-router-dom";
+import React, { Component }  from 'react';
+import Home from  './pages/PaginaHome/Home';
+import PaginaExibicaoIndicadores from './pages/PaginaExibicaoIndicadores';
+import PaginaFonteExterna from './pages/PaginaFonteExterna';
+import PaginaFonteLocal from './pages/PaginaFonteLocal';
+
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//Enuqnato não tivermos  a rota, vamos usar essa constante aqui 
+
+  //0 - home
+  //1 - Input de csv
+  //2 - Input de base externa
+  //3 - Exibição dos indicadores
+
+{/*  <Home/> 
+ <PaginaFonteLocal/> 
+ <PaginaFonteExterna/>  */}
+return(
+<div>
+ <PaginaExibicaoIndicadores />
+  </div>
+)
 }
 
 export default App;
