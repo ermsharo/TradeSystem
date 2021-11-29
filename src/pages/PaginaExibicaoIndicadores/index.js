@@ -26,7 +26,13 @@ import MobileDatePicker from '@mui/lab/MobileDatePicker';
 import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
 import Stack from '@mui/material/Stack';
 import MACD from './../../components/MACD/index';
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams
+} from "react-router-dom";
 
 const PageGrid = styled.div`
 padding: 64px;
@@ -223,6 +229,8 @@ const PaginaExibicaoIndicadores = (props) => {
     const [hasError, setHasError] = useState(false)
 
 
+    let { source, label, stock, indicator ,start, end , small, large } = useParams();
+
 
 
 
@@ -232,7 +240,7 @@ const PaginaExibicaoIndicadores = (props) => {
 
 
 
-    const url = `http://trading-system-backend.herokuapp.com/${Indicator}/yahoo/MULT3.SA?start=${startDateValue.toISOString().split('T')[0]}&end=${endDateValue.toISOString().split('T')[0]}&small_avg=9&larg_avg=16`;
+    const url = `http://trading-system-backend.herokuapp.com/${Indicator}/${source}/${stock}?start=${startDateValue.toISOString().split('T')[0]}&end=${endDateValue.toISOString().split('T')[0]}&small_avg=9&larg_avg=16`;
  
 
 
@@ -317,8 +325,8 @@ return(FormatCandleData);
   <PageGrid>
     <InfoGrid> 
       <div>
-  <Typography variant = "h3" > Nome da ação</Typography>
-  <Typography variant = "h5" > Vindo do yahoo</Typography>
+  <Typography variant = "h3" > {label}</Typography>
+  <Typography variant = "h5" > {source}</Typography>
   </div>
   <div>
   <LocalizationProvider dateAdapter={AdapterDateFns}>

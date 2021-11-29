@@ -1,0 +1,987 @@
+[
+    {
+      "Source": "yahoo",
+      "Stock": "AAL",
+      "Label name": "American Airlines Group Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "CCL",
+      "Label name": "Carnival Corporation & plc"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "AAPL",
+      "Label name": "Apple Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "PFE",
+      "Label name": "Pfizer Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "BAC",
+      "Label name": "Bank of America Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "F",
+      "Label name": "Ford Motor Company"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "RLX",
+      "Label name": "RLX Technology Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "NCLH",
+      "Label name": "Norwegian Cruise Line Holdings Ltd."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "DAL",
+      "Label name": "Delta Air Lines, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "LCID",
+      "Label name": "Lucid Group, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "UAL",
+      "Label name": "United Airlines Holdings, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "AMD",
+      "Label name": "Advanced Micro Devices, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "MRNA",
+      "Label name": "Moderna, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "UBER",
+      "Label name": "Uber Technologies, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "BBD",
+      "Label name": "Banco Bradesco S.A."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "DIDI",
+      "Label name": "DiDi Global Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "PBR",
+      "Label name": "Petróleo Brasileiro S.A. - Petrobras"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "WFC",
+      "Label name": "Wells Fargo & Company"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "NIO",
+      "Label name": "NIO Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "T",
+      "Label name": "AT&T Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "NVDA",
+      "Label name": "NVIDIA Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "INTC",
+      "Label name": "Intel Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "XOM",
+      "Label name": "Exxon Mobil Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "EDU",
+      "Label name": "New Oriental Education & Technology Group Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "C",
+      "Label name": "Citigroup Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "MSFT",
+      "Label name": "Microsoft Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "ITUB",
+      "Label name": "Itaú Unibanco Holding S.A."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "VALE",
+      "Label name": "Vale S.A."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "PDD",
+      "Label name": "Pinduoduo Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "OXY",
+      "Label name": "Occidental Petroleum Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "NOK",
+      "Label name": "Nokia Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "FCX",
+      "Label name": "Freeport-McMoRan Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "PLTR",
+      "Label name": "Palantir Technologies Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "FCEL",
+      "Label name": "FuelCell Energy, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "AMC",
+      "Label name": "AMC Entertainment Holdings, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "MRK",
+      "Label name": "Merck & Co., Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "BA",
+      "Label name": "The Boeing Company"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "NLY",
+      "Label name": "Annaly Capital Management, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "ABEV",
+      "Label name": "Ambev S.A."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "VZ",
+      "Label name": "Verizon Communications Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "BP",
+      "Label name": "BP p.l.c."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "CSCO",
+      "Label name": "Cisco Systems, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "PTON",
+      "Label name": "Peloton Interactive, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "MU",
+      "Label name": "Micron Technology, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "MRO",
+      "Label name": "Marathon Oil Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "DVN",
+      "Label name": "Devon Energy Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "BMY",
+      "Label name": "Bristol-Myers Squibb Company"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "LVS",
+      "Label name": "Las Vegas Sands Corp."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "SWN",
+      "Label name": "Southwestern Energy Company"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "BABA",
+      "Label name": "Alibaba Group Holding Limited"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "M",
+      "Label name": "Macy's, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "KO",
+      "Label name": "The Coca-Cola Company"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "FB",
+      "Label name": "Meta Platforms, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "WISH",
+      "Label name": "ContextLogic Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "GOLD",
+      "Label name": "Barrick Gold Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "JPM",
+      "Label name": "JPMorgan Chase & Co."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "TME",
+      "Label name": "Tencent Music Entertainment Group"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "KMI",
+      "Label name": "Kinder Morgan, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "PLUG",
+      "Label name": "Plug Power Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "GM",
+      "Label name": "General Motors Company"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "SOFI",
+      "Label name": "SoFi Technologies, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "ET",
+      "Label name": "Energy Transfer LP"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "CLF",
+      "Label name": "Cleveland-Cliffs Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "AUY",
+      "Label name": "Yamana Gold Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "CMCSA",
+      "Label name": "Comcast Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "JWN",
+      "Label name": "Nordstrom, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "PBR-A",
+      "Label name": "Petróleo Brasileiro S.A. - Petrobras"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "SLB",
+      "Label name": "Schlumberger Limited"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "LU",
+      "Label name": "Lufax Holding Ltd"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "TLRY",
+      "Label name": "Tilray, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "CLOV",
+      "Label name": "Clover Health Investments, Corp."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "HST",
+      "Label name": "Host Hotels & Resorts, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "DIS",
+      "Label name": "The Walt Disney Company"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "SIRI",
+      "Label name": "Sirius XM Holdings Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "GPS",
+      "Label name": "The Gap, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "JBLU",
+      "Label name": "JetBlue Airways Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "CVX",
+      "Label name": "Chevron Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "MS",
+      "Label name": "Morgan Stanley"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "TSLA",
+      "Label name": "Tesla, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "KGC",
+      "Label name": "Kinross Gold Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "LUV",
+      "Label name": "Southwest Airlines Co."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "SABR",
+      "Label name": "Sabre Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "VTRS",
+      "Label name": "Viatris Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "CSX",
+      "Label name": "CSX Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "CVE",
+      "Label name": "Cenovus Energy Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "XPEV",
+      "Label name": "XPeng Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "RBLX",
+      "Label name": "Roblox Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "TEVA",
+      "Label name": "Teva Pharmaceutical Industries Limited"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "DRNA",
+      "Label name": "Dicerna Pharmaceuticals, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "PYPL",
+      "Label name": "PayPal Holdings, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "SU",
+      "Label name": "Suncor Energy Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "BNTX",
+      "Label name": "BioNTech SE"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "HAL",
+      "Label name": "Halliburton Company"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "V",
+      "Label name": "Visa Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "ZM",
+      "Label name": "Zoom Video Communications, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "HBAN",
+      "Label name": "Huntington Bancshares Incorporated"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "RCL",
+      "Label name": "Royal Caribbean Cruises Ltd."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "SNAP",
+      "Label name": "Snap Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "X",
+      "Label name": "United States Steel Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "COP",
+      "Label name": "ConocoPhillips"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "ZNGA",
+      "Label name": "Zynga Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "SAVE",
+      "Label name": "Spirit Airlines, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "PCG",
+      "Label name": "PG&E Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "HPQ",
+      "Label name": "HP Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "BSX",
+      "Label name": "Boston Scientific Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "TAL",
+      "Label name": "TAL Education Group"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "VIAC",
+      "Label name": "ViacomCBS Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "GE",
+      "Label name": "General Electric Company"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "JNJ",
+      "Label name": "Johnson & Johnson"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "APA",
+      "Label name": "APA Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "KEY",
+      "Label name": "KeyCorp"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "DKNG",
+      "Label name": "DraftKings Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "TWO",
+      "Label name": "Two Harbors Investment Corp."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "JD",
+      "Label name": "JD.com, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "ATVI",
+      "Label name": "Activision Blizzard, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "IQ",
+      "Label name": "iQIYI, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "RIOT",
+      "Label name": "Riot Blockchain, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "COTY",
+      "Label name": "Coty Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "BKR",
+      "Label name": "Baker Hughes Company"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "TWTR",
+      "Label name": "Twitter, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "QCOM",
+      "Label name": "QUALCOMM Incorporated"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "STNE",
+      "Label name": "StoneCo Ltd."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "PSFE",
+      "Label name": "Paysafe Limited"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "MGM",
+      "Label name": "MGM Resorts International"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "LYFT",
+      "Label name": "Lyft, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "NKLA",
+      "Label name": "Nikola Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "KR",
+      "Label name": "The Kroger Co."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "KHC",
+      "Label name": "The Kraft Heinz Company"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "AMAT",
+      "Label name": "Applied Materials, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "RYCEY",
+      "Label name": "Rolls-Royce Holdings plc"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "AGNC",
+      "Label name": "AGNC Investment Corp."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "AA",
+      "Label name": "Alcoa Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "QS",
+      "Label name": "QuantumScape Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "EPD",
+      "Label name": "Enterprise Products Partners L.P."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "ATUS",
+      "Label name": "Altice USA, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "LYG",
+      "Label name": "Lloyds Banking Group plc"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "RDS-A",
+      "Label name": "Royal Dutch Shell plc"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "CTRA",
+      "Label name": "Coterra Energy Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "SKLZ",
+      "Label name": "Skillz Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "RTX",
+      "Label name": "Raytheon Technologies Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "EXPE",
+      "Label name": "Expedia Group, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "WMT",
+      "Label name": "Walmart Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "TCOM",
+      "Label name": "Trip.com Group Limited"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "IBN",
+      "Label name": "ICICI Bank Limited"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "LI",
+      "Label name": "Li Auto Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "GOEV",
+      "Label name": "Canoo Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "AXP",
+      "Label name": "American Express Company"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "TSM",
+      "Label name": "Taiwan Semiconductor Manufacturing Company Limited"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "SBSW",
+      "Label name": "Sibanye Stillwater Limited"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "MARA",
+      "Label name": "Marathon Digital Holdings, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "SBUX",
+      "Label name": "Starbucks Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "HPE",
+      "Label name": "Hewlett Packard Enterprise Company"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "MA",
+      "Label name": "Mastercard Incorporated"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "RF",
+      "Label name": "Regions Financial Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "PG",
+      "Label name": "The Procter & Gamble Company"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "SAN",
+      "Label name": "Banco Santander, S.A."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "CX",
+      "Label name": "CEMEX, S.A.B. de C.V."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "OPEN",
+      "Label name": "Opendoor Technologies Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "AR",
+      "Label name": "Antero Resources Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "NVAX",
+      "Label name": "Novavax, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "ABNB",
+      "Label name": "Airbnb, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "MLCO",
+      "Label name": "Melco Resorts & Entertainment Limited"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "AMCR",
+      "Label name": "Amcor plc"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "PK",
+      "Label name": "Park Hotels & Resorts Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "MPC",
+      "Label name": "Marathon Petroleum Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "WYNN",
+      "Label name": "Wynn Resorts, Limited"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "AZN",
+      "Label name": "AstraZeneca PLC"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "WBA",
+      "Label name": "Walgreens Boots Alliance, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "FUTU",
+      "Label name": "Futu Holdings Limited"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "SCHW",
+      "Label name": "The Charles Schwab Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "BEKE",
+      "Label name": "KE Holdings Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "TDOC",
+      "Label name": "Teladoc Health, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "FITB",
+      "Label name": "Fifth Third Bancorp"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "VLO",
+      "Label name": "Valero Energy Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "GILD",
+      "Label name": "Gilead Sciences, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "LUMN",
+      "Label name": "Lumen Technologies, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "VIPS",
+      "Label name": "Vipshop Holdings Limited"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "MDT",
+      "Label name": "Medtronic plc"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "WMB",
+      "Label name": "The Williams Companies, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "HOOD",
+      "Label name": "Robinhood Markets, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "VOD",
+      "Label name": "Vodafone Group Public Limited Company"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "BTG",
+      "Label name": "B2Gold Corp."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "SPCE",
+      "Label name": "Virgin Galactic Holdings, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "TRIP",
+      "Label name": "TripAdvisor, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "WU",
+      "Label name": "The Western Union Company"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "FSR",
+      "Label name": "Fisker Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "FLEX",
+      "Label name": "Flex Ltd."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "CHPT",
+      "Label name": "ChargePoint Holdings, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "TFC",
+      "Label name": "Truist Financial Corporation"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "PINS",
+      "Label name": "Pinterest, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "GSAT",
+      "Label name": "Globalstar, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "GGB",
+      "Label name": "Gerdau S.A."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "AFRM",
+      "Label name": "Affirm Holdings, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "PSX",
+      "Label name": "Phillips 66"
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "ASTR",
+      "Label name": "Astra Space, Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "ABBV",
+      "Label name": "AbbVie Inc."
+    },
+    {
+      "Source": "yahoo",
+      "Stock": "UMC",
+      "Label name": "United Microelectronics Corporation"
+    }
+  ]

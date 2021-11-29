@@ -27,7 +27,7 @@ return(
 <Route path="/" element={<Home />} />
 <Route path="/local-source" element={ <PaginaFonteLocal/> } />
 <Route path="/external-source" element={ <PaginaFonteExterna/> } />
-<Route path="/indicator" element={ <PaginaExibicaoIndicadores />} />
+<Route path="/indicator/:source/:stock/:label/" element={ <PaginaExibicaoIndicadores />} />
 
  </Routes>
   </div>
