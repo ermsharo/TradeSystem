@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Routes, Route, Link } from "react-router-dom";
-
+import React, { Component }  from 'react';
 import Home from  './pages/PaginaHome/Home';
 import PaginaExibicaoIndicadores from './pages/PaginaExibicaoIndicadores';
 import PaginaFonteExterna from './pages/PaginaFonteExterna';
@@ -18,20 +18,13 @@ function App() {
   //2 - Input de base externa
   //3 - Exibição dos indicadores
 
-return(
-<>
-
-
 {/*  <Home/> 
  <PaginaFonteLocal/> 
  <PaginaFonteExterna/>  */}
+return(
+<div>
  <PaginaExibicaoIndicadores />
- 
-
-   
-  
-
-  </>
+  </div>
 )
 }
 
