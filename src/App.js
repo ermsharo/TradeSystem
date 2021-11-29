@@ -23,7 +23,13 @@ function App() {
  <PaginaFonteExterna/>  */}
 return(
 <div>
- <PaginaExibicaoIndicadores />
+<Routes>
+<Route path="/" element={<Home />} />
+<Route path="/local-source" element={ <PaginaFonteLocal/> } />
+<Route path="/external-source" element={ <PaginaFonteExterna/> } />
+<Route path="/indicator" element={ <PaginaExibicaoIndicadores />} />
+
+ </Routes>
   </div>
 )
 }

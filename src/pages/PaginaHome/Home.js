@@ -4,7 +4,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
-
+import Header from './../../components/Header';
+import Footer from './../../components/Footer';
 
 const HomeBox = styled.div`
  
@@ -70,7 +71,7 @@ const Cover = styled.div`
   color: white; 
   min-height: calc(100vh - 60px) ;
   position: relative;
-  top:60px;
+  top:58px;
 
 
 
@@ -82,43 +83,23 @@ const Cover = styled.div`
 
 
 
-export default function Home(){
+export default function Home() {
 
-    return(
+    return (
 
+<> <Header />
+<Cover>
 
-<>
-
-
-<Cover> 
-
-    <AboutTitle><Typography align = 'center' variant = "h2"> Trader System</Typography></AboutTitle>
-    <AboutText>
-        <Typography variant= "h6" style = {{width: '65vw', margin:'auto'}}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mauris eros, mattis vel blandit sed, feugiat porta arcu. Donec interdum, felis non mattis congue, mauris ante maximus justo, ac pretium arcu felis et quam. Maecenas mattis rhoncus elementum. Proin commodo nibh vitae ipsum ullamcorper posuere. Cras eget fermentum massa. Suspendisse purus velit, interdum ac aliquet in, porttitor id neque. Praesent non massa neque. Fusce convallis,  
-        </Typography>    
-            </AboutText>
-
- 
-<DataOptionsBox>
-
-<Button variant="contained" endIcon={<UploadFileIcon /> }  disableElevation>
-  Enviar sua fonte de dados 
-</Button>
-<Button variant="contained"    endIcon={<LanguageOutlinedIcon />}  disableElevation>
-    Usar fonte de dados de terceiro 
-</Button>
-
-</DataOptionsBox>
 
 </Cover>
 
 
-
-
+<Footer/>
 </>
 
 
+      
+       
     )
 
 

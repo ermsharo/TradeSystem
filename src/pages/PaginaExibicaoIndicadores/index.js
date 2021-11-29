@@ -232,7 +232,7 @@ const PaginaExibicaoIndicadores = (props) => {
 
 
 
-    const url = `http://127.0.0.1:8000/${Indicator}/yahoo/MULT3.SA?start=${startDateValue.toISOString().split('T')[0]}&end=${endDateValue.toISOString().split('T')[0]}&small_avg=9&larg_avg=16`;
+    const url = `http://trading-system-backend.herokuapp.com/${Indicator}/yahoo/MULT3.SA?start=${startDateValue.toISOString().split('T')[0]}&end=${endDateValue.toISOString().split('T')[0]}&small_avg=9&larg_avg=16`;
  
 
 
