@@ -232,10 +232,6 @@ const PaginaExibicaoIndicadores = (props) => {
 
 
 
-
-   /* const [ response, loading, hasError ] = useFetch('https://trading-system-backend.herokuapp.com/macd/yahoo/MULT3.SA?start=2020-11-17&end=2021-11-17&small_avg=9&larg_avg=16'); 
- */
-
     const url = `http://127.0.0.1:8000/${Indicator}/yahoo/MULT3.SA?start=${startDateValue.toISOString().split('T')[0]}&end=${endDateValue.toISOString().split('T')[0]}&small_avg=9&larg_avg=16`;
  
 
