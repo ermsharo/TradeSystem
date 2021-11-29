@@ -166,49 +166,7 @@ const PaginaFonteExterna = () => {
 
   </div>
   <div>
-  <LocalizationProvider dateAdapter={AdapterDateFns}>
-    <DatePicker>
-    <DesktopDatePicker
-          label="Data do inicio"
-          value={startDateValue}
-          onChange={(newValue) => {
-            setSartDateValue(newValue);
-          }}
-          renderInput={(params) => <TextField {...params} />}
-        />
-
-<DesktopDatePicker
-          label="Data do fim"
-          value={endDateValue}
-          onChange={(newValue) => {
-            setEndDateValue(newValue)
-          }}
-          renderInput={(params) => <TextField {...params} />}
-        />
-
-   </DatePicker>
-   <DatePickerMobile>
-       
-<MobileDatePicker
-          label="Data do inicio"
-          value={startDateValue}
-          onChange={(newValue) => {
-            setSartDateValue(newValue);
-          }}
-          renderInput={(params) => <TextField {...params} />}
-        />
-
-<MobileDatePicker
-          label="Data do fim"
-          value={endDateValue}
-          onChange={(newValue) => {
-            setEndDateValue(newValue)
-          }}
-          renderInput={(params) => <TextField {...params} />}
-        />
-
- </DatePickerMobile>
-    </LocalizationProvider>
+  
   </div>
   </InfoGrid>
 

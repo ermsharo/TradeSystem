@@ -1,7 +1,11 @@
 {
   "name": "trader-client",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
+  "engines": {
+    "npm": "8.1.0",
+    "node": "16.13.0"
+  },
   "dependencies": {
     "@emotion/core": "^10.1.1",
     "@emotion/react": "latest",
