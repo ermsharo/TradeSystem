@@ -1,14 +1,13 @@
 import {useState, useEffect} from 'react';
 
 
-export default function useFetch(url, opts) {
+export default async function useFetch(url, opts) {
 
     const [response, setResponse] = useState(null)
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const [hasError, setHasError] = useState(false)
 
-        setLoading(true)
-        fetch(url, opts)
+       fetch(url, opts)
             .then((res) => {
             setResponse(res.data)
             setLoading(false)

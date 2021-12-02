@@ -26,6 +26,8 @@ import MobileDatePicker from '@mui/lab/MobileDatePicker';
 import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
 import Stack from '@mui/material/Stack';
 import MACD from './../../components/MACD/index';
+import RequestMACD from '../../../src/components/MACD-CHART/request'; 
+import RequestMACDintraDaily from '../../../src/components/MACD-INTRADAY-CHART/request';
 import {
   BrowserRouter as Router,
   Switch,
@@ -128,6 +130,25 @@ margin-top:32px;
 `
 
 
+const AvgBox = styled.div`
+display: grid;
+grid-template-columns: 1fr 1fr;
+max-width: 400px;
+column-gap: 16px;
+
+
+
+`;
+
+const AvgBoxAlign = styled.div`
+display: flex;
+justify-content: end;
+margin-right: 32px;
+
+`;
+
+
+
 const LineThree = styled.div`
 
 
@@ -215,6 +236,8 @@ const PaginaExibicaoIndicadores = (props) => {
   const [Indicator, setIndicator] = React.useState('macd');
   const [startDateValue, setSartDateValue] = React.useState(EndDefault);
   const [endDateValue, setEndDateValue] =   React.useState(new Date());
+  const [smallAvg, setSmallAvg] =  React.useState(9);
+  const [largeAvg, setLargeAvg] = React.useState(16);
 
     const [value, setValue] = React.useState(0);
       
@@ -222,40 +245,24 @@ const PaginaExibicaoIndicadores = (props) => {
       setValue(newValue);
     };
 
-
-
-   const [response, setResponse] = useState(null)
-    const [loading, setLoading] = useState(true)
-    const [hasError, setHasError] = useState(false) 
-
-
     let { source, label, stock, indicator ,start, end , small, large } = useParams();
-
-
-
-
-
-    const urlMacd = `http://trading-system-backend.herokuapp.com/${Indicator}/${source}/${stock}?start=${startDateValue.toISOString().split('T')[0]}&end=${endDateValue.toISOString().split('T')[0]}&small_avg=9&larg_avg=16`;
+    const urlMacd = `http://trading-system-backend.herokuapp.com/${Indicator}/${source}/${stock}?start=${startDateValue.toISOString().split('T')[0]}&end=${endDateValue.toISOString().split('T')[0]}&small_avg=${smallAvg}&larg_avg=${largeAvg}`;
  
-
-
-
-   React.useEffect(() => {
-
-     axios.get(urlMacd).then((response) => {
-       setLoading(true);
-      setResponse(response.data);
-      console.log(response.data);
-      setLoading(false);
-      console.log(startDateValue.toISOString().split('T')[0]); 
-     });
-   }, [startDateValue, endDateValue]); 
-
-
-
-
- 
-   if (!response) return null;
+    
+    const MemorizedMACDfunc = (source, stock, start, end, smallAvg, largeAvg ) =>{
+      return <RequestMACD source= {source} stock ={stock} start ={start} end = {end} smallAvg = {smallAvg} largeAvg = {largeAvg} />
+    }
+    const memorizedMACD = React.useMemo(() => 
+    MemorizedMACDfunc(source,stock ,startDateValue.toISOString().split('T')[0],endDateValue.toISOString().split('T')[0], smallAvg, largeAvg),
+     [source,stock ,startDateValue,endDateValue, smallAvg, largeAvg]);
+   
+     const MemorizedMACDintraDayfunc = (source, stock, start, end, smallAvg, largeAvg ) =>{
+      return <RequestMACDintraDaily source= {source} stock ={stock} start ={start} end = {end} smallAvg = {smallAvg} largeAvg = {largeAvg} />
+    }
+    const memorizedMACDintraDay = React.useMemo(() => 
+    MemorizedMACDintraDayfunc(source,stock ,startDateValue.toISOString().split('T')[0],endDateValue.toISOString().split('T')[0], smallAvg, largeAvg),
+     [source,stock ,startDateValue,endDateValue, smallAvg, largeAvg]);
+   
 
 
 
@@ -305,19 +312,6 @@ return(FormatCandleData);
 
 
 
- 
-
-
-
-
-
-
-  if(loading) return(<div>Loading...</div>)
-  if(hasError) return(<div>Error occured.</div> )
-  else if(response){
-
-
- 
   return (
    
     <>  <Header />
@@ -372,6 +366,32 @@ return(FormatCandleData);
 
  </DatePickerMobile>
     </LocalizationProvider>
+<AvgBoxAlign>
+    <AvgBox> 
+
+    <TextField
+          id="outlined-number"
+          label="small avg"
+          type="number"
+        
+
+          value={smallAvg}
+          onChange={(event) => {
+            setSmallAvg(event.target.value);
+          }}
+        />
+           <TextField
+          id="outlined-number"
+          label="large avg"
+          type="number"
+         
+          value={largeAvg}
+          onChange={(event) => {
+            setLargeAvg(event.target.value);
+          }}
+        />
+    </AvgBox>
+    </AvgBoxAlign>
   </div>
   </InfoGrid>
                 <LineTwo>
@@ -387,7 +407,7 @@ return(FormatCandleData);
       >
         <Tab label="MACD" {...a11yProps(0)} />
         <Tab label="MACD INTRADAY" {...a11yProps(1)} />
-        <Tab label="LSTM" {...a11yProps(2)} />
+       
        {/*  <Tab label="Indicadior 4" {...a11yProps(3)} /> */}
  
       </Tabs>
@@ -395,45 +415,14 @@ return(FormatCandleData);
       <div>
       <TabPanel value={value} index={0}>
 
-      <IndicatorsBox>
 
-
-<Box >
-<Card variant="outlined">{cardInside("cumulative return", response.avaliation.cumulative_return.toFixed(2)+"%", "descrição")}</Card>
-</Box>
-<Box >
-<Card variant="outlined">{cardInside("down_periods", response.avaliation.down_periods, "Periodos de queda")}</Card>
-</Box>
-<Box >
-<Card variant="outlined">{cardInside("n_transactions", response.avaliation.n_transactions, "descrição")}</Card>
-</Box>
-<Box >
-<Card variant="outlined">{cardInside("up_periods", response.avaliation.up_periods, "descrição")}</Card>
-</Box>
-<Box >
-<Card variant="outlined">{cardInside("winning_trades_rate", response.avaliation.winning_trades_rate.toFixed(2)+"%", "descrição")}</Card>
-</Box>
-</IndicatorsBox>
-{/* <ChartGrid> */}
-      <MACDchart  traceSmall = {response.trace_small} 
-      traceLarge = {response.trace_large} 
-       traceMACD = {response.trace_macd} 
-       candleData = {CandleFormatData(response.candle_data)}/>
-     {/*     <MACD  traceSmall = {response.trace_small} 
-      traceLarge = {response.trace_large} 
-       traceMACD = {response.trace_macd} 
-       candleData = {CandleFormatData(response.candle_data)}/>
-       </ChartGrid> */}
+      {memorizedMACD}
+       
       </TabPanel>
       <TabPanel value={value} index={1}>
-      
+      {memorizedMACDintraDay}
       </TabPanel>
-      <TabPanel value={value} index={2}>
-  
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-
-      </TabPanel>
+   
 </div>
 
                     
@@ -454,5 +443,5 @@ return(FormatCandleData);
 
 
   }
-}
+/* } */
 export default PaginaExibicaoIndicadores;

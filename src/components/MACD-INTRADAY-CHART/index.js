@@ -11,11 +11,8 @@ const MACDFormatedData = (MACD) =>{
   let x = MACD.x; 
   let y = MACD.y; 
 
-  //[Timestamp, O, H, L, C]
 
    let size = x.length; 
-console.log("Date", x.length)
-
   let MACDFormatedData = [];
 
   for(let i = 0 ; i < size ; i++){
@@ -23,8 +20,6 @@ console.log("Date", x.length)
     MACDFormatedData.push({x : new Date(x[i]) , y: y[x[i]] });
   }
   
-console.log('macd --->',MACDFormatedData);  
-/*  return(FormatCandleData);  */
 
 return MACDFormatedData; 
   
@@ -129,6 +124,7 @@ export default class ApexChart extends React.Component {
                     enabled: false,
                   
                 },
+                fontFamily: 'Roboto, sans-serif',
                   type: 'candlestick',
                   height: 290,
                   id: 'candles',
@@ -163,6 +159,7 @@ export default class ApexChart extends React.Component {
                     enabled: false,
                   
                 },
+                fontFamily: 'Roboto, sans-serif',
                   type: 'candlestick',
                   height: 290,
                   id: 'candles',
