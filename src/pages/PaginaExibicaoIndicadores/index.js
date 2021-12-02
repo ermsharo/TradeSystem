@@ -10,8 +10,8 @@ import Typography from '@mui/material/Typography';
 import styled from "styled-components";
 /* import { useFetch } from '../../../services/requests'; */
 import { RepeatOneSharp } from '@mui/icons-material';
-import {useState, useEffect} from 'react';
-import CandleStick from './../../components/CandleStick/index';
+import {useState, useEffect, useMemo} from 'react';
+import MACDchart from '../../components/MACD-CHART/index';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -224,9 +224,9 @@ const PaginaExibicaoIndicadores = (props) => {
 
 
 
-    const [response, setResponse] = useState(null)
+   const [response, setResponse] = useState(null)
     const [loading, setLoading] = useState(true)
-    const [hasError, setHasError] = useState(false)
+    const [hasError, setHasError] = useState(false) 
 
 
     let { source, label, stock, indicator ,start, end , small, large } = useParams();
@@ -234,26 +234,26 @@ const PaginaExibicaoIndicadores = (props) => {
 
 
 
-    let FormatDate = () =>{
-      
-    }; 
 
-
-
-    const url = `http://trading-system-backend.herokuapp.com/${Indicator}/${source}/${stock}?start=${startDateValue.toISOString().split('T')[0]}&end=${endDateValue.toISOString().split('T')[0]}&small_avg=9&larg_avg=16`;
+    const urlMacd = `http://trading-system-backend.herokuapp.com/${Indicator}/${source}/${stock}?start=${startDateValue.toISOString().split('T')[0]}&end=${endDateValue.toISOString().split('T')[0]}&small_avg=9&larg_avg=16`;
  
 
 
 
    React.useEffect(() => {
 
-     axios.get(url).then((response) => {
+     axios.get(urlMacd).then((response) => {
+       setLoading(true);
       setResponse(response.data);
       console.log(response.data);
       setLoading(false);
       console.log(startDateValue.toISOString().split('T')[0]); 
      });
-   }, [startDateValue, endDateValue]);
+   }, [startDateValue, endDateValue]); 
+
+
+
+
  
    if (!response) return null;
 
@@ -386,9 +386,9 @@ return(FormatCandleData);
   
       >
         <Tab label="MACD" {...a11yProps(0)} />
-        <Tab label="Indicadior 2" {...a11yProps(1)} />
-        <Tab label="Indicadior 3" {...a11yProps(2)} />
-        <Tab label="Indicadior 4" {...a11yProps(3)} />
+        <Tab label="MACD INTRADAY" {...a11yProps(1)} />
+        <Tab label="LSTM" {...a11yProps(2)} />
+       {/*  <Tab label="Indicadior 4" {...a11yProps(3)} /> */}
  
       </Tabs>
       </div>
@@ -399,10 +399,10 @@ return(FormatCandleData);
 
 
 <Box >
-<Card variant="outlined">{cardInside("cumulative_return", response.avaliation.cumulative_return.toFixed(2)+"%", "descrição")}</Card>
+<Card variant="outlined">{cardInside("cumulative return", response.avaliation.cumulative_return.toFixed(2)+"%", "descrição")}</Card>
 </Box>
 <Box >
-<Card variant="outlined">{cardInside("down_periods", response.avaliation.down_periods, "descrição")}</Card>
+<Card variant="outlined">{cardInside("down_periods", response.avaliation.down_periods, "Periodos de queda")}</Card>
 </Box>
 <Box >
 <Card variant="outlined">{cardInside("n_transactions", response.avaliation.n_transactions, "descrição")}</Card>
@@ -415,7 +415,7 @@ return(FormatCandleData);
 </Box>
 </IndicatorsBox>
 {/* <ChartGrid> */}
-      <CandleStick  traceSmall = {response.trace_small} 
+      <MACDchart  traceSmall = {response.trace_small} 
       traceLarge = {response.trace_large} 
        traceMACD = {response.trace_macd} 
        candleData = {CandleFormatData(response.candle_data)}/>

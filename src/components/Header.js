@@ -6,6 +6,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useNavigate } from 'react-router-dom';
 
 const HeaderBox = styled.header`
  
@@ -33,16 +34,16 @@ img{
 
 export default function Header()
 {
-
+  const navigate = useNavigate();
     return(
 
         <Box sx={{ flexGrow: 2 }}>
         <AppBar position="fixed" color ="default">
           <Toolbar variant="dense">
             <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-              <MenuIcon />
+              <MenuIcon/>
             </IconButton>
-            <Logo><img src = "https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png" />
+            <Logo onClick={() => navigate(`/`)} ><img src = "https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png" />
             </Logo>
             <Typography variant="h6" color="inherit" component="div">
               

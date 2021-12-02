@@ -123,6 +123,13 @@ export default class ApexChart extends React.Component {
         }],
               options: {
                 chart: {
+
+
+                  animations: {
+                    enabled: false,
+                  
+                },
+                fontFamily: 'Roboto, sans-serif',
                   type: 'candlestick',
                   height: 290,
                   id: 'candles',
@@ -152,6 +159,12 @@ export default class ApexChart extends React.Component {
             
               optionsMACD: {
                 chart: {
+
+                  animations: {
+                    enabled: false,
+                  
+                },
+                fontFamily: 'Roboto, sans-serif',
                   type: 'candlestick',
                   height: 290,
                   id: 'candles',
@@ -187,6 +200,11 @@ export default class ApexChart extends React.Component {
               }],
               optionsBar: {
                 chart: {
+
+                  animations: {
+                    enabled: false,
+                  
+                },
                   height: '100%',
                   type: 'bar',
                   brush: {
