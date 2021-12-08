@@ -120,6 +120,7 @@ return(
   </Box>
   </IndicatorsBox>
 
+
     <MACDchart  traceSmall = {response.trace_small} 
     traceLarge = {response.trace_large} 
      traceMACD = {response.trace_macd} 
