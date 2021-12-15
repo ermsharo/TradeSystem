@@ -49,12 +49,12 @@ import axios from "axios";
   
 
 
-export default function RequestMACD ({source, stock, start, end, smallAvg, largeAvg}){
+export default function RequestDecisionTree ({source, stock, start, end, smallAvg, largeAvg}){
 
 
 
 
-    const requestURL = `https://trading-system-backend.herokuapp.com/decision-tree/${source}/${stock}?start=${start}&end=&series_size=10`;
+    const requestURL = `https://trading-system-backend.herokuapp.com/decision-tree/${source}/${stock}?start=${start}&end=${end}&series_size=10`;
 
     const [response, setResponse] = useState(null)
     const [loading, setLoading] = useState(true)
@@ -68,10 +68,14 @@ export default function RequestMACD ({source, stock, start, end, smallAvg, large
         setLoading(true);
        setResponse(response.data);
        console.log("Requesitou de novo");
+  
        console.log("Decision tree", response);
        setLoading(false);
       })
-      .catch(error => { setHasError(true)})
+      .catch(error => { 
+        setHasError(true);
+        console.log("Decison tree url", requestURL); 
+      })
     }, [source, stock, start, end, smallAvg, largeAvg]); 
  
     
@@ -95,25 +99,25 @@ export default function RequestMACD ({source, stock, start, end, smallAvg, large
     </React.Fragment>
       )}
 
-    if(hasError) return <div> 
+      if(hasError) return (<div> 
 
 
-<Accordion disabled>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-          <Typography>DECISION TREE</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-
-        </AccordionDetails>
-      </Accordion>
-
-
-
-    </div>
+        <Accordion disabled>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel2a-content"
+                  id="panel2a-header"
+                >
+                  <Typography>DECISION TREE</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+        
+                </AccordionDetails>
+              </Accordion>
+        
+        
+        
+            </div>)
 
   if(loading){
     return (  <Box  sx={{ display: 'flex' }}>
@@ -125,7 +129,7 @@ export default function RequestMACD ({source, stock, start, end, smallAvg, large
 return(
 
 
-<Accordion disabled>
+<Accordion >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
@@ -136,18 +140,18 @@ return(
         <AccordionDetails>
         <>
   <IndicatorsBox>
-  <Box >
+  {/* <Box >
   <Card variant="outlined">{cardInside("next_value", response.next_value[0].toFixed(2))}</Card>
   <Card variant="outlined">{cardInside("f1_score", response.f1_score.toFixed(2))}</Card>
-  </Box>
+  </Box> */}
 
   </IndicatorsBox>
 
 
-    <MACDchart  traceSmall = {response.trace_small} 
+   {/*  <MACDchart  traceSmall = {response.trace_small} 
     traceLarge = {response.trace_large} 
      traceMACD = {response.trace_macd} 
-     candleData = {CandleFormatData(response.candle_data)}/>
+     candleData = {CandleFormatData(response.candle_data)}/> */}
 </>
 
         </AccordionDetails>

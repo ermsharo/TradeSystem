@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState, useEffect, useMemo} from 'react';
-import MACDchart from '../../components/MACD-CHART/index';
+import MACDchart from '../MACD-CHART/index';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import styled from "styled-components";
@@ -53,8 +53,8 @@ export default function RequestMACD ({source, stock, start, end, smallAvg, large
 
 
 
-
-    const requestURL = `https://trading-system-backend.herokuapp.com/decision-tree/${source}/${stock}?start=${start}&end=&series_size=10`;
+//https://trading-system-backend.herokuapp.com/lstm/${source}/${stock}?start=${start}&end=${end}&epochs=10
+    const requestURL = `http://trading-system-backend.herokuapp.com/decision-tree-brutef/${source}/${stock}?start=${start}&end=${end}&series_size=10`;
 
     const [response, setResponse] = useState(null)
     const [loading, setLoading] = useState(true)
@@ -71,7 +71,12 @@ export default function RequestMACD ({source, stock, start, end, smallAvg, large
        console.log("Decision tree", response);
        setLoading(false);
       })
-      .catch(error => { setHasError(true)})
+      .catch(error => { setHasError(true)
+        console.log('LTSM URL',requestURL)
+      }
+      
+   
+      )
     }, [source, stock, start, end, smallAvg, largeAvg]); 
  
     
@@ -104,7 +109,7 @@ export default function RequestMACD ({source, stock, start, end, smallAvg, large
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>DECISION TREE</Typography>
+          <Typography>LTSM</Typography>
         </AccordionSummary>
         <AccordionDetails>
 
@@ -114,6 +119,23 @@ export default function RequestMACD ({source, stock, start, end, smallAvg, large
 
 
     </div>
+
+if(hasError) return (
+  <Accordion disabled>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel2a-content"
+            id="panel2a-header"
+          >
+            <Typography>LTSM</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+       
+          </AccordionDetails>
+        </Accordion>
+  
+        )
+
 
   if(loading){
     return (  <Box  sx={{ display: 'flex' }}>
@@ -125,13 +147,13 @@ export default function RequestMACD ({source, stock, start, end, smallAvg, large
 return(
 
 
-<Accordion disabled>
+<Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>DECISION TREE</Typography>
+          <Typography>LTSM</Typography>
         </AccordionSummary>
         <AccordionDetails>
         <>

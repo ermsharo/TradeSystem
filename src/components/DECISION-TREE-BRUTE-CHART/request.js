@@ -49,12 +49,13 @@ import axios from "axios";
   
 
 
-export default function RequestMACD ({source, stock, start, end, smallAvg, largeAvg}){
+export default function RequestDecisionTree ({source, stock, start, end, smallAvg, largeAvg}){
 
 
-
-//http://trading-system-backend.herokuapp.com/decision-tree-brutef/${source}/${stock}?start=${start}&end=${end}&series_size=10&ranges=1,2,3
-    const requestURL = `http://trading-system-backend.herokuapp.com/decision-tree-brutef/${source}/${stock}?start=${start}&end=${end}&series_size=10`;
+    const requestURL = `http://trading-system-backend.herokuapp.com/decision-tree-brutef/${source}/${stock}?start=${start}&end=${end}&series_size=10&ranges=1,2,3`
+   // const requestURL = `http://trading-system-backend.herokuapp.com/decision-tree-brutef/${source}?/${stock}?start=${start}&end=${end}&series_size=10`;
+   
+  // const requestURL  = "https://trading-system-backend.herokuapp.com/decision-tree/yahoo/MULT3.SA?start=2020-11-17&end=2021-11-17&series_size=10"
 
     const [response, setResponse] = useState(null)
     const [loading, setLoading] = useState(true)
@@ -95,9 +96,7 @@ export default function RequestMACD ({source, stock, start, end, smallAvg, large
     </React.Fragment>
       )}
 
-    if(hasError) return <div> 
-
-
+      if(hasError) return (
 <Accordion disabled>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -107,25 +106,23 @@ export default function RequestMACD ({source, stock, start, end, smallAvg, large
           <Typography>DECISION TREE BRUTEFORCE</Typography>
         </AccordionSummary>
         <AccordionDetails>
-
+     
         </AccordionDetails>
       </Accordion>
 
-
-
-    </div>
-
+      )
   if(loading){
     return (  <Box  sx={{ display: 'flex' }}>
     <CircularProgress />
   </Box>); 
   }   
+ 
   
   if (response){
 return(
 
 
-<Accordion disabled>
+<Accordion >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
@@ -137,17 +134,17 @@ return(
         <>
   <IndicatorsBox>
   <Box >
-  <Card variant="outlined">{cardInside("next_value", response.next_value[0].toFixed(2))}</Card>
-  <Card variant="outlined">{cardInside("f1_score", response.f1_score.toFixed(2))}</Card>
+{/*   <Card variant="outlined">{cardInside("next_value", response.next_value[0].toFixed(2))}</Card>
+  <Card variant="outlined">{cardInside("f1_score", response.f1_score.toFixed(2))}</Card> */}
   </Box>
 
   </IndicatorsBox>
 
 
-    <MACDchart  traceSmall = {response.trace_small} 
+{/*     <MACDchart  traceSmall = {response.trace_small} 
     traceLarge = {response.trace_large} 
      traceMACD = {response.trace_macd} 
-     candleData = {CandleFormatData(response.candle_data)}/>
+     candleData = {CandleFormatData(response.candle_data)}/> */}
 </>
 
         </AccordionDetails>
@@ -157,7 +154,7 @@ return(
  
 )
   }
-    return 'error'
+
   
  
 

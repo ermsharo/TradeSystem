@@ -31,6 +31,7 @@ import RequestMACDintraDaily from '../../../src/components/MACD-INTRADAY-CHART/r
 import RequestMACDbest from '../../../src/components/MACD-BEST-CHART/request';
 import RequestDecisionTree from '../../../src/components/DECICION-TREE-CHART/request';
 import RequestDecisionTreeBruteForce from '../../components/DECISION-TREE-BRUTE-CHART/request';
+import RequestMemorizedLTSM from '../../components/LSTM-CHART/request';
 import {
   BrowserRouter as Router,
   Switch,
@@ -131,7 +132,7 @@ padding-bottom: 32px;
 
 const LineTwo = styled.div`
 display: grid;
-grid-template-columns: 160px 1fr;
+grid-template-columns: 64px 1fr;
 
 row-gap: 32px;
 margin-top:32px; 
@@ -242,7 +243,7 @@ const PaginaExibicaoIndicadores = (props) => {
   var x = 360; 
   EndDefault.setDate(EndDefault.getDate() - x);
 
-  const [Indicator, setIndicator] = React.useState('macd');
+
   const [startDateValue, setSartDateValue] = React.useState(EndDefault);
   const [endDateValue, setEndDateValue] =   React.useState(new Date());
   const [smallAvg, setSmallAvg] =  React.useState(9);
@@ -255,9 +256,10 @@ const PaginaExibicaoIndicadores = (props) => {
     };
 
     let { source, label, stock, indicator ,start, end , small, large } = useParams();
-    const urlMacd = `http://trading-system-backend.herokuapp.com/${Indicator}/${source}/${stock}?start=${startDateValue.toISOString().split('T')[0]}&end=${endDateValue.toISOString().split('T')[0]}&small_avg=${smallAvg}&larg_avg=${largeAvg}`;
+   // const urlMacd = `http://trading-system-backend.herokuapp.com/${Indicator}/${source}/${stock}?start=${startDateValue.toISOString().split('T')[0]}&end=${endDateValue.toISOString().split('T')[0]}&small_avg=${smallAvg}&larg_avg=${largeAvg}`;
  
-    
+    source = "MULT3.SA"
+    label = "Multiplan"
     const MemorizedMACDfunc = (source, stock, start, end, smallAvg, largeAvg ) =>{
       return <RequestMACD source= {source} stock ={stock} start ={start} end = {end} smallAvg = {smallAvg} largeAvg = {largeAvg} />
     }
@@ -295,6 +297,13 @@ const PaginaExibicaoIndicadores = (props) => {
     MemorizedDecisionTreeBruteforce(source,stock ,startDateValue.toISOString().split('T')[0],endDateValue.toISOString().split('T')[0], smallAvg, largeAvg),
      [source,stock ,startDateValue,endDateValue, smallAvg, largeAvg]);
 
+
+     const MemorizedLTSM = (source, stock, start, end, smallAvg, largeAvg ) =>{
+      return <RequestMemorizedLTSM source= {source} stock ={stock} start ={start} end = {end} smallAvg = {smallAvg} largeAvg = {largeAvg} />
+    }
+    const  memorizedLTSM = React.useMemo(() => 
+    MemorizedLTSM(source,stock ,startDateValue.toISOString().split('T')[0],endDateValue.toISOString().split('T')[0], smallAvg, largeAvg),
+     [source,stock ,startDateValue,endDateValue, smallAvg, largeAvg]);
 
 
   function TabPanel(props) {
@@ -428,7 +437,7 @@ return(FormatCandleData);
                 <LineTwo>
          
         <div>
-      <Tabs
+{/*       <Tabs
         orientation="vertical"
         variant="scrollable"
         value={value}
@@ -439,9 +448,9 @@ return(FormatCandleData);
         <Tab label="MACD" {...a11yProps(0)} />
         <Tab label="MACD INTRADAY" {...a11yProps(1)} />
        
-       {/*  <Tab label="Indicadior 4" {...a11yProps(3)} /> */}
+
  
-      </Tabs>
+      </Tabs> */}
       </div>
       <div>
       {/* <TabPanel value={value} index={0}>
@@ -500,7 +509,7 @@ return(FormatCandleData);
 
     {memorizedDecisionTreeBruteforce}
 
-      
+{memorizedLTSM}
 
     </div>
 
