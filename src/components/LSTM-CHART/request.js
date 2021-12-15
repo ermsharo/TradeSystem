@@ -11,7 +11,8 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
+import data from './data.json'
+import { JsonToTable } from "react-json-to-table";
 
 import axios from "axios";
   const CandleFormatData = (candleData) =>{
@@ -49,7 +50,7 @@ import axios from "axios";
   
 
 
-export default function RequestMACD ({source, stock, start, end, smallAvg, largeAvg}){
+export default function RequestLTSM ({source, stock, start, end, smallAvg, largeAvg}){
 
 
 
@@ -99,6 +100,24 @@ export default function RequestMACD ({source, stock, start, end, smallAvg, large
    
     </React.Fragment>
       )}
+
+    if(data) return (
+
+
+<Accordion >
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <Typography>LTSM</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+        <JsonToTable json={data} />
+        </AccordionDetails>
+      </Accordion>
+
+    )
 
     if(hasError) return <div> 
 

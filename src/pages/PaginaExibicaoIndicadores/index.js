@@ -503,8 +503,7 @@ return(FormatCandleData);
      {memorizedMACDbest}
         </AccordionDetails>
       </Accordion>
-{/* 
-      {memorizedDecisionTree} */}
+  {/*     memorizedDecisionTree */}
 
 
 

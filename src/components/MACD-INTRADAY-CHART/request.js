@@ -50,7 +50,7 @@ export default function RequestMACD ({source, stock, start, end, smallAvg, large
 
 
 
-    const requestURL = `http://trading-system-backend.herokuapp.com/macd/av-intraday/${stock}?start=${start}&end=${end}&small_avg=${smallAvg}&larg_avg=${largeAvg}`;
+    const requestURL = `https://trading-system-backend.herokuapp.com/macd/av-intraday/IBM?start=2021-11-17&end=2021-11-17&small_avg=9&larg_avg=16`;
 
     const [response, setResponse] = useState(null)
     const [loading, setLoading] = useState(true)
