@@ -53,8 +53,8 @@ export default function RequestMACD ({source, stock, start, end, smallAvg, large
 
 
 
-
-    const requestURL = `https://trading-system-backend.herokuapp.com/decision-tree/${source}/${stock}?start=${start}&end=&series_size=10`;
+//http://trading-system-backend.herokuapp.com/decision-tree-brutef/${source}/${stock}?start=${start}&end=${end}&series_size=10&ranges=1,2,3
+    const requestURL = `http://trading-system-backend.herokuapp.com/decision-tree-brutef/${source}/${stock}?start=${start}&end=${end}&series_size=10`;
 
     const [response, setResponse] = useState(null)
     const [loading, setLoading] = useState(true)
