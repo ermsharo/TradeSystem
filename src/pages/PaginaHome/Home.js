@@ -104,25 +104,22 @@ export default function Home() {
 <AboutBox>
 
 <AboutTitle>
-<Typography variant="h1">
-Trader system
+<Typography variant="h3">
+Sistema para Análise Técnica de Investimentos	
     </Typography>
 </AboutTitle>
 
 <AboutText>
     <Typography variant="h6">
-Proin malesuada porttitor varius. Nullam porttitor vulputate urna, cursus varius risus ultricies id. Duis lorem sem, pellentesque quis maximus non, suscipit id ligula. Suspendisse posuere finibus metus, ut consequat dui rhoncus nec. Nunc vulputate nunc vel leo mollis accumsan. Quisque consequat imperdiet massa 
+    A motivação do grupo foi buscar uma solução para facilitar o processo de realizar a análise técnica para auxiliar investidores. O sistema desenvolvido auxilia investidores a realizar a análise técnica por meio de gráficos de valores e indicadores.
 </Typography>
     
 </AboutText>
 
 <ButtonBox>
 <Button  
-onClick={() => navigate("/local-source")}
- variant="contained">Teste com uma base de dados propria</Button>
-<Button  
 onClick={() => navigate("/external-source")}
- variant="contained">Teste com uma base de dados de terceiros</Button>
+ variant="contained">Teste com uma base do nosso banco</Button>
 
 </ButtonBox>
 </AboutBox>

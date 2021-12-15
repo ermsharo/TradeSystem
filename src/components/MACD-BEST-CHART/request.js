@@ -50,7 +50,8 @@ export default function RequestMACD ({source, stock, start, end, smallAvg, large
 
 
 
-    const requestURL = `http://trading-system-backend.herokuapp.com/macd/av-intraday/${stock}?start=${start}&end=${end}&small_avg=${smallAvg}&larg_avg=${largeAvg}`;
+
+    const requestURL = `http://trading-system-backend.herokuapp.com/macd/${source}/${stock}?start=${start}&end=${end}&small_avg=${smallAvg}&larg_avg=${largeAvg}`;
 
     const [response, setResponse] = useState(null)
     const [loading, setLoading] = useState(true)
@@ -101,9 +102,6 @@ export default function RequestMACD ({source, stock, start, end, smallAvg, large
   if (response){
 return(
   <>
-
-  <Typography> De valor a outro valor </Typography>
-  <br></br>
   <IndicatorsBox>
   <Box >
   <Card variant="outlined">{cardInside("cumulative return", response.avaliation.cumulative_return.toFixed(2)+"%", "descrição")}</Card>
@@ -121,6 +119,7 @@ return(
   <Card variant="outlined">{cardInside("winning_trades_rate", response.avaliation.winning_trades_rate.toFixed(2)+"%", "descrição")}</Card>
   </Box>
   </IndicatorsBox>
+
 
     <MACDchart  traceSmall = {response.trace_small} 
     traceLarge = {response.trace_large} 

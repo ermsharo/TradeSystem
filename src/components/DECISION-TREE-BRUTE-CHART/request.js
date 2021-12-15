@@ -1,12 +1,17 @@
 import React from 'react';
 import {useState, useEffect, useMemo} from 'react';
-import MACDchart from '../../components/MACD-CHART/index';
+import MACDchart from '../MACD-CHART/index';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import styled from "styled-components";
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 
 import axios from "axios";
   const CandleFormatData = (candleData) =>{
@@ -49,8 +54,7 @@ export default function RequestMACD ({source, stock, start, end, smallAvg, large
 
 
 
-
-    const requestURL = `http://trading-system-backend.herokuapp.com/macd/av-intraday/${stock}?start=${start}&end=${end}&small_avg=${smallAvg}&larg_avg=${largeAvg}`;
+    const requestURL = `https://trading-system-backend.herokuapp.com/decision-tree/${source}/${stock}?start=${start}&end=&series_size=10`;
 
     const [response, setResponse] = useState(null)
     const [loading, setLoading] = useState(true)
@@ -64,8 +68,10 @@ export default function RequestMACD ({source, stock, start, end, smallAvg, large
         setLoading(true);
        setResponse(response.data);
        console.log("Requesitou de novo");
+       console.log("Decision tree", response);
        setLoading(false);
-      });
+      })
+      .catch(error => { setHasError(true)})
     }, [source, stock, start, end, smallAvg, largeAvg]); 
  
     
@@ -89,8 +95,25 @@ export default function RequestMACD ({source, stock, start, end, smallAvg, large
     </React.Fragment>
       )}
 
-    
+    if(hasError) return <div> 
 
+
+<Accordion disabled>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <Typography>DECISION TREE BRUTEFORCE</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+
+        </AccordionDetails>
+      </Accordion>
+
+
+
+    </div>
 
   if(loading){
     return (  <Box  sx={{ display: 'flex' }}>
@@ -100,33 +123,38 @@ export default function RequestMACD ({source, stock, start, end, smallAvg, large
   
   if (response){
 return(
-  <>
 
-  <Typography> De valor a outro valor </Typography>
-  <br></br>
+
+<Accordion disabled>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <Typography>DECISION TREE BRUTEFORCE</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+        <>
   <IndicatorsBox>
   <Box >
-  <Card variant="outlined">{cardInside("cumulative return", response.avaliation.cumulative_return.toFixed(2)+"%", "descrição")}</Card>
+  <Card variant="outlined">{cardInside("next_value", response.next_value[0].toFixed(2))}</Card>
+  <Card variant="outlined">{cardInside("f1_score", response.f1_score.toFixed(2))}</Card>
   </Box>
-  <Box >
-  <Card variant="outlined">{cardInside("down_periods", response.avaliation.down_periods, "Periodos de queda")}</Card>
-  </Box>
-  <Box >
-  <Card variant="outlined">{cardInside("n_transactions", response.avaliation.n_transactions, "descrição")}</Card>
-  </Box>
-  <Box >
-  <Card variant="outlined">{cardInside("up_periods", response.avaliation.up_periods, "descrição")}</Card>
-  </Box>
-  <Box >
-  <Card variant="outlined">{cardInside("winning_trades_rate", response.avaliation.winning_trades_rate.toFixed(2)+"%", "descrição")}</Card>
-  </Box>
+
   </IndicatorsBox>
+
 
     <MACDchart  traceSmall = {response.trace_small} 
     traceLarge = {response.trace_large} 
      traceMACD = {response.trace_macd} 
      candleData = {CandleFormatData(response.candle_data)}/>
 </>
+
+        </AccordionDetails>
+      </Accordion>
+
+
+ 
 )
   }
     return 'error'

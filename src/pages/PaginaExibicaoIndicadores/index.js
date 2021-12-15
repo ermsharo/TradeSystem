@@ -28,6 +28,9 @@ import Stack from '@mui/material/Stack';
 import MACD from './../../components/MACD/index';
 import RequestMACD from '../../../src/components/MACD-CHART/request'; 
 import RequestMACDintraDaily from '../../../src/components/MACD-INTRADAY-CHART/request';
+import RequestMACDbest from '../../../src/components/MACD-BEST-CHART/request';
+import RequestDecisionTree from '../../../src/components/DECICION-TREE-CHART/request';
+import RequestDecisionTreeBruteForce from '../../components/DECISION-TREE-BRUTE-CHART/request';
 import {
   BrowserRouter as Router,
   Switch,
@@ -35,6 +38,12 @@ import {
   Link,
   useParams
 } from "react-router-dom";
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
+
 
 const PageGrid = styled.div`
 padding: 64px;
@@ -263,6 +272,28 @@ const PaginaExibicaoIndicadores = (props) => {
     MemorizedMACDintraDayfunc(source,stock ,startDateValue.toISOString().split('T')[0],endDateValue.toISOString().split('T')[0], smallAvg, largeAvg),
      [source,stock ,startDateValue,endDateValue, smallAvg, largeAvg]);
    
+     const MemorizedMACDbest = (source, stock, start, end, smallAvg, largeAvg ) =>{
+      return <RequestMACDbest source= {source} stock ={stock} start ={start} end = {end} smallAvg = {smallAvg} largeAvg = {largeAvg} />
+    }
+    const memorizedMACDbest = React.useMemo(() => 
+    MemorizedMACDbest(source,stock ,startDateValue.toISOString().split('T')[0],endDateValue.toISOString().split('T')[0], smallAvg, largeAvg),
+     [source,stock ,startDateValue,endDateValue, smallAvg, largeAvg]);
+   
+
+     const MemorizedDecisionTree = (source, stock, start, end, smallAvg, largeAvg ) =>{
+      return <RequestDecisionTree source= {source} stock ={stock} start ={start} end = {end} smallAvg = {smallAvg} largeAvg = {largeAvg} />
+    }
+    const memorizedDecisionTree = React.useMemo(() => 
+    MemorizedDecisionTree(source,stock ,startDateValue.toISOString().split('T')[0],endDateValue.toISOString().split('T')[0], smallAvg, largeAvg),
+     [source,stock ,startDateValue,endDateValue, smallAvg, largeAvg]);
+
+
+     const MemorizedDecisionTreeBruteforce = (source, stock, start, end, smallAvg, largeAvg ) =>{
+      return <RequestDecisionTreeBruteForce source= {source} stock ={stock} start ={start} end = {end} smallAvg = {smallAvg} largeAvg = {largeAvg} />
+    }
+    const  memorizedDecisionTreeBruteforce = React.useMemo(() => 
+    MemorizedDecisionTreeBruteforce(source,stock ,startDateValue.toISOString().split('T')[0],endDateValue.toISOString().split('T')[0], smallAvg, largeAvg),
+     [source,stock ,startDateValue,endDateValue, smallAvg, largeAvg]);
 
 
 
@@ -413,7 +444,7 @@ return(FormatCandleData);
       </Tabs>
       </div>
       <div>
-      <TabPanel value={value} index={0}>
+      {/* <TabPanel value={value} index={0}>
 
 
       {memorizedMACD}
@@ -421,7 +452,72 @@ return(FormatCandleData);
       </TabPanel>
       <TabPanel value={value} index={1}>
       {memorizedMACDintraDay}
-      </TabPanel>
+      </TabPanel> */}
+
+<div>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography>MACD</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+        {memorizedMACD}
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <Typography>MACD INTRADAY</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+          {memorizedMACDintraDay}
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <Typography>MACD BEST</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+     {memorizedMACDbest}
+        </AccordionDetails>
+      </Accordion>
+
+      {memorizedDecisionTree}
+
+
+    {memorizedDecisionTreeBruteforce}
+
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <Typography>LSTM</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+
+    </div>
+
    
 </div>
 

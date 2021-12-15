@@ -25,7 +25,7 @@ const Logo = styled.div`
 img{
     margin-top: 10px;
     margin-bottom: 10px;
-   width: 30px;
+   width: 100px;
    height: 30px;
 }
 `; 
@@ -43,7 +43,7 @@ export default function Header()
             <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
               <MenuIcon/>
             </IconButton>
-            <Logo onClick={() => navigate(`/`)} ><img src = "https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png" />
+            <Logo onClick={() => navigate(`/`)} ><img src = "https://lh3.googleusercontent.com/proxy/e7PXYYb6nFGy1gQC4F_iSKnKwmThHfn9h23skF-k0UEBgAc8RasCyWoPxQSNK3EUolTxWXB-czwmjHl6cHQvRWf2wjNlErbGCEdeZM7oBBc" />
             </Logo>
             <Typography variant="h6" color="inherit" component="div">
               
