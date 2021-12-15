@@ -11,7 +11,8 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
+import data from './data.json'; 
+import DecisionTreeChart from "./DecisionTreeChart";
 
 import axios from "axios";
   const CandleFormatData = (candleData) =>{
@@ -46,10 +47,27 @@ import axios from "axios";
    padding: 0px 32px; 
    padding-bottom: 32px;
    `
-  
+   
+    const CreateFormatedDateTime = (DateType) =>{
+      console.log("Data here formated ", DateType)
+      var result = Object.entries(DateType);
+      console.log("DateType", result);
+      let formatedData = []; 
+      for(let i = 0; i < result.length; i++){
+        console.log("Entrando aqui"); 
+        console.log(result[i] ,"-->" );
+        formatedData.push({x : new Date(result[i][0]), y: (result[i][1])});
+      
+      }
+      
+      console.log("Nossos dados formatadinhos",formatedData);
+    }
 
 
 export default function RequestDecisionTree ({source, stock, start, end, smallAvg, largeAvg}){
+
+  
+
 
 
 
@@ -60,7 +78,7 @@ export default function RequestDecisionTree ({source, stock, start, end, smallAv
     const [loading, setLoading] = useState(true)
     const [hasError, setHasError] = useState(false)
 
-
+  console.log("Decision tree data ",data); 
 
     React.useEffect(() => {
 
@@ -99,33 +117,10 @@ export default function RequestDecisionTree ({source, stock, start, end, smallAv
     </React.Fragment>
       )}
 
-      if(hasError) return (<div> 
 
-
-        <Accordion disabled>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel2a-content"
-                  id="panel2a-header"
-                >
-                  <Typography>DECISION TREE</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-        
-                </AccordionDetails>
-              </Accordion>
-        
-        
-        
-            </div>)
-
-  if(loading){
-    return (  <Box  sx={{ display: 'flex' }}>
-    <CircularProgress />
-  </Box>); 
-  }   
   
-  if (response){
+  if (data){
+
 return(
 
 
@@ -140,18 +135,23 @@ return(
         <AccordionDetails>
         <>
   <IndicatorsBox>
-  {/* <Box >
-  <Card variant="outlined">{cardInside("next_value", response.next_value[0].toFixed(2))}</Card>
-  <Card variant="outlined">{cardInside("f1_score", response.f1_score.toFixed(2))}</Card>
-  </Box> */}
+   <Box >
+  <Card variant="outlined">{cardInside("next_value", data?.next_value['245'].toFixed(2))}</Card>
 
+  </Box> 
+  <Card variant="outlined">{cardInside("f1_score", (data?.f1_score).toFixed(2))}</Card>
   </IndicatorsBox>
 
 
-   {/*  <MACDchart  traceSmall = {response.trace_small} 
-    traceLarge = {response.trace_large} 
-     traceMACD = {response.trace_macd} 
-     candleData = {CandleFormatData(response.candle_data)}/> */}
+    <DecisionTreeChart
+    High = {CreateFormatedDateTime(data.df_pred.High)} 
+    Low = {CreateFormatedDateTime(data.df_pred.Low)} 
+    Open = {CreateFormatedDateTime(data.df_pred.Open)} 
+    Close = {CreateFormatedDateTime(data.df_pred.Close)}
+    Volume = {CreateFormatedDateTime(data.df_pred.Volume)}
+    AdjClose = {data.df_pred["Adj Close"]}
+    Predict ={data.df_pred.predicted}
+/> 
 </>
 
         </AccordionDetails>
